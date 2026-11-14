@@ -1,0 +1,44 @@
+# ===== Unity 生成物 =====
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Uu]ser[Ss]ettings/
+[Mm]emoryCaptures/
+
+# ===== IDE =====
+.vs/
+.idea/
+.vscode/
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+
+# ===== 构建产物 =====
+*.apk
+*.aab
+*.unitypackage
+*.app
+
+# ===== .NET 工具 =====
+tools/**/bin/
+tools/**/obj/
+
+# ===== 本机杂项 =====
+.DS_Store
+Thumbs.db
+*.tmp
+*.log
+.dsh-meow/
