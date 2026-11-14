@@ -10,16 +10,19 @@ namespace SevenPages.Core
         public int TurnsRemaining;
         /// <summary>每回合开始时对持有者造成的墨伤。</summary>
         public int DamagePerTurn;
+        /// <summary>每回合开始时为持有者额外抽取的牌数。</summary>
+        public int DrawPerTurn;
 
         public RiteState() { }
 
-        public RiteState(string defId, string name, string text, int turns, int damagePerTurn)
+        public RiteState(string defId, string name, string text, int turns, int damagePerTurn, int drawPerTurn = 0)
         {
             DefId = defId;
             Name = name;
             Text = text;
             TurnsRemaining = turns;
             DamagePerTurn = damagePerTurn;
+            DrawPerTurn = drawPerTurn;
         }
     }
 }

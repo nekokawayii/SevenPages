@@ -1,5 +1,5 @@
 {
-  "_comment": "《七页轮回》基础卡池 v0.1。art 字段为占位符 key，正式美术到位后批量替换。",
+  "_comment": "《七页轮回》卡池 v0.2：20 张。加牌只改这里，引擎不用动。",
   "cards": [
     {
       "id": "strike",
@@ -9,9 +9,7 @@
       "cost": 1,
       "text": "造成 2 点墨伤。",
       "art": "placeholder_strike",
-      "effects": [
-        { "kind": "Damage", "amount": 2 }
-      ]
+      "effects": [ { "kind": "Damage", "amount": 2 } ]
     },
     {
       "id": "ink_splash",
@@ -21,9 +19,7 @@
       "cost": 2,
       "text": "造成 3 点墨伤；若目标本页墨量不超过 2，再造成 2 点。",
       "art": "placeholder_ink_splash",
-      "effects": [
-        { "kind": "ConditionalDamage", "amount": 3, "threshold": 2, "extraAmount": 2 }
-      ]
+      "effects": [ { "kind": "ConditionalDamage", "amount": 3, "threshold": 2, "extraAmount": 2 } ]
     },
     {
       "id": "page_ripper",
@@ -33,9 +29,7 @@
       "cost": 3,
       "text": "造成 5 点墨伤。",
       "art": "placeholder_page_ripper",
-      "effects": [
-        { "kind": "Damage", "amount": 5 }
-      ]
+      "effects": [ { "kind": "Damage", "amount": 5 } ]
     },
     {
       "id": "sevenfold",
@@ -45,9 +39,7 @@
       "cost": 4,
       "text": "造成 8 点墨伤。",
       "art": "placeholder_sevenfold",
-      "effects": [
-        { "kind": "Damage", "amount": 8 }
-      ]
+      "effects": [ { "kind": "Damage", "amount": 8 } ]
     },
     {
       "id": "mend",
@@ -57,9 +49,7 @@
       "cost": 1,
       "text": "恢复 3 点墨（不跨页）。",
       "art": "placeholder_mend",
-      "effects": [
-        { "kind": "Heal", "amount": 3 }
-      ]
+      "effects": [ { "kind": "Heal", "amount": 3 } ]
     },
     {
       "id": "stillness",
@@ -69,9 +59,7 @@
       "cost": 0,
       "text": "抽 1 张牌。",
       "art": "placeholder_stillness",
-      "effects": [
-        { "kind": "Draw", "amount": 1 }
-      ]
+      "effects": [ { "kind": "Draw", "amount": 1 } ]
     },
     {
       "id": "whisper",
@@ -81,9 +69,7 @@
       "cost": 0,
       "text": "获得 2 点灵。",
       "art": "placeholder_whisper",
-      "effects": [
-        { "kind": "GainSpirit", "amount": 2 }
-      ]
+      "effects": [ { "kind": "GainSpirit", "amount": 2 } ]
     },
     {
       "id": "ink_ward",
@@ -93,9 +79,7 @@
       "cost": 1,
       "text": "本回合受到的伤害减少 3 点。",
       "art": "placeholder_ink_ward",
-      "effects": [
-        { "kind": "Ward", "amount": 3 }
-      ]
+      "effects": [ { "kind": "Ward", "amount": 3 } ]
     },
     {
       "id": "backflow",
@@ -105,9 +89,7 @@
       "cost": 2,
       "text": "结附：目标每回合开始时受到 1 点墨伤，持续 3 回合。",
       "art": "placeholder_backflow",
-      "effects": [
-        { "kind": "ApplyRite", "riteId": "backflow", "riteName": "逆墨痕", "riteTurns": 3, "riteDamage": 1 }
-      ]
+      "effects": [ { "kind": "ApplyRite", "riteId": "backflow", "riteName": "逆墨痕", "riteTurns": 3, "riteDamage": 1 } ]
     },
     {
       "id": "karma",
@@ -118,17 +100,134 @@
       "text": "无法打出。它只是提醒你：有些债，还不掉。",
       "art": "placeholder_karma",
       "effects": []
+    },
+
+    {
+      "id": "sever",
+      "name": "断章",
+      "type": "Spell",
+      "target": "Enemy",
+      "cost": 2,
+      "text": "造成 4 点墨伤。",
+      "art": "placeholder_sever",
+      "effects": [ { "kind": "Damage", "amount": 4 } ]
+    },
+    {
+      "id": "turn_page",
+      "name": "翻页",
+      "type": "Spell",
+      "target": "Self",
+      "cost": 1,
+      "text": "对自己造成 1 点墨伤，抽 2 张牌。",
+      "art": "placeholder_turn_page",
+      "effects": [
+        { "kind": "Damage", "amount": 1 },
+        { "kind": "Draw", "amount": 2 }
+      ]
+    },
+    {
+      "id": "devour",
+      "name": "噬墨",
+      "type": "Spell",
+      "target": "Enemy",
+      "cost": 2,
+      "text": "造成 3 点墨伤，并为自己恢复等量的墨。",
+      "art": "placeholder_devour",
+      "effects": [ { "kind": "Lifesteal", "amount": 3 } ]
+    },
+    {
+      "id": "afterglow",
+      "name": "回光",
+      "type": "Spell",
+      "target": "Self",
+      "cost": 2,
+      "text": "恢复 4 点墨（不跨页）。",
+      "art": "placeholder_afterglow",
+      "effects": [ { "kind": "Heal", "amount": 4 } ]
+    },
+    {
+      "id": "thousand_pages",
+      "name": "千页",
+      "type": "Spell",
+      "target": "Enemy",
+      "cost": 5,
+      "text": "造成 10 点墨伤。千页翻尽，唯余一页。",
+      "art": "placeholder_thousand_pages",
+      "effects": [ { "kind": "Damage", "amount": 10 } ]
+    },
+    {
+      "id": "ink_cage",
+      "name": "墨牢",
+      "type": "Spell",
+      "target": "Enemy",
+      "cost": 2,
+      "text": "结附：目标每回合开始时受到 2 点墨伤，持续 3 回合。",
+      "art": "placeholder_ink_cage",
+      "effects": [ { "kind": "ApplyRite", "riteId": "ink_cage", "riteName": "墨牢", "riteTurns": 3, "riteDamage": 2 } ]
+    },
+    {
+      "id": "reincarnation_seal",
+      "name": "轮回印",
+      "type": "Spell",
+      "target": "Self",
+      "cost": 3,
+      "text": "结附自身：每回合开始时额外抽 1 张，持续 2 回合。",
+      "art": "placeholder_reincarnation_seal",
+      "effects": [ { "kind": "ApplyRite", "riteId": "reincarnation_seal", "riteName": "轮回印", "riteTurns": 2, "riteDraw": 1 } ]
+    },
+    {
+      "id": "dry_ink",
+      "name": "断墨",
+      "type": "Spell",
+      "target": "Enemy",
+      "cost": 1,
+      "text": "造成 1 点墨伤，并结附：每回合 1 点墨伤，持续 2 回合。",
+      "art": "placeholder_dry_ink",
+      "effects": [
+        { "kind": "Damage", "amount": 1 },
+        { "kind": "ApplyRite", "riteId": "dry_ink", "riteName": "断墨", "riteTurns": 2, "riteDamage": 1 }
+      ]
+    },
+    {
+      "id": "karmic_debt",
+      "name": "宿业",
+      "type": "Spell",
+      "target": "Enemy",
+      "cost": 3,
+      "text": "造成 4 点墨伤；若目标本页墨量不超过 3，再造成 3 点。",
+      "art": "placeholder_karmic_debt",
+      "effects": [ { "kind": "ConditionalDamage", "amount": 4, "threshold": 3, "extraAmount": 3 } ]
+    },
+    {
+      "id": "karma_bind",
+      "name": "业障缠身",
+      "type": "Spell",
+      "target": "Enemy",
+      "cost": 2,
+      "text": "结附：每回合 3 点墨伤，持续 2 回合；抽 1 张牌。",
+      "art": "placeholder_karma_bind",
+      "effects": [
+        { "kind": "ApplyRite", "riteId": "karma_bind", "riteName": "业障缠身", "riteTurns": 2, "riteDamage": 3 },
+        { "kind": "Draw", "amount": 1 }
+      ]
     }
   ],
   "starterDeck": [
-    "strike", "strike", "strike", "strike", "strike",
-    "ink_splash", "ink_splash", "ink_splash",
+    "strike", "strike", "strike", "strike",
+    "ink_splash", "ink_splash",
     "page_ripper", "page_ripper",
-    "mend", "mend", "mend",
+    "sevenfold",
+    "mend", "mend",
     "stillness", "stillness",
     "whisper", "whisper",
     "backflow",
     "ink_ward",
-    "sevenfold"
+    "sever", "sever",
+    "turn_page",
+    "devour",
+    "afterglow",
+    "thousand_pages",
+    "ink_cage",
+    "dry_ink"
   ]
 }

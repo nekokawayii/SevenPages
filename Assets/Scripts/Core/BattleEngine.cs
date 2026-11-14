@@ -105,6 +105,13 @@ namespace SevenPages.Core
                     p.TakeDamage(rite.DamagePerTurn);
                     if (p.IsDead) return;
                 }
+                if (rite.DrawPerTurn > 0)
+                {
+                    AppendLog(string.Format("「{0}」牵引墨迹，{1} 额外抽取 {2} 张。", rite.Name, p.Name, rite.DrawPerTurn));
+                    DrawCards(p, rite.DrawPerTurn);
+                    CheckOutcome();
+                    if (p.IsDead) return;
+                }
                 if (rite.TurnsRemaining > 0) rite.TurnsRemaining--;
             }
         }

@@ -37,7 +37,9 @@ namespace SevenPages.Core
         /// <summary>条件伤害：目标当前页墨量 ≤ Threshold 时，额外造成 ExtraAmount。</summary>
         ConditionalDamage,
         /// <summary>获得本回合减伤护盾。</summary>
-        Ward
+        Ward,
+        /// <summary>吸血：对目标造成伤害，并为自己恢复等量墨。</summary>
+        Lifesteal
     }
 
     /// <summary>一条效果的数据描述。</summary>
@@ -51,6 +53,7 @@ namespace SevenPages.Core
         public string RiteName;
         public int RiteTurns;
         public int RiteDamage;
+        public int RiteDraw;
 
         public EffectSpec() { }
 

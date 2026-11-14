@@ -103,6 +103,15 @@ namespace SevenPages.Core
                     case EffectKind.Ward:
                         raw += Math.Min(e.Amount, 6) * 2.0;
                         break;
+
+                    case EffectKind.Lifesteal:
+                    {
+                        raw += e.Amount * 10.0;
+                        int missing = BattleConfig.InkPerPage - me.Ink;
+                        raw += Math.Min(missing, e.Amount) * 5.0;
+                        if (e.Amount >= foe.TotalInk) lethal = true;
+                        break;
+                    }
                 }
             }
 

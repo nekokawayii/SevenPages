@@ -74,6 +74,7 @@ namespace SevenPages.Core
         public string riteName;
         public int riteTurns;
         public int riteDamage;
+        public int riteDraw;
 
         public EffectSpec ToSpec()
         {
@@ -88,6 +89,7 @@ namespace SevenPages.Core
             spec.RiteName = riteName;
             spec.RiteTurns = riteTurns;
             spec.RiteDamage = riteDamage;
+            spec.RiteDraw = riteDraw;
             return spec;
         }
     }

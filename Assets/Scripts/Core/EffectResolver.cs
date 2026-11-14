@@ -59,6 +59,19 @@ namespace SevenPages.Core
                     ApplyDamage(target, amount, card.Name);
                     break;
                 }
+
+                case EffectKind.Lifesteal:
+                {
+                    int before = target.TotalInk;
+                    ApplyDamage(target, e.Amount, card.Name);
+                    int dealt = before - target.TotalInk;
+                    if (dealt > 0)
+                    {
+                        caster.Heal(dealt);
+                        AppendLog(string.Format("墨迹倒流，{0} 吸回 {1} 点墨。", caster.Name, dealt));
+                    }
+                    break;
+                }
             }
         }
 
@@ -80,7 +93,8 @@ namespace SevenPages.Core
                 string.IsNullOrEmpty(e.RiteName) ? card.Name : e.RiteName,
                 card.Def.Text,
                 e.RiteTurns,
-                e.RiteDamage);
+                e.RiteDamage,
+                e.RiteDraw);
 
             // 同名式叠加：刷新持续回合
             for (int i = 0; i < target.Rites.Count; i++)
